@@ -1,0 +1,7 @@
+exclude *.txt *.py
+include CHANGES.txt LICENSE.txt README.rst setup.py
+recursive-include tests *.py
+recursive-include doc *.txt *.rst
+global-exclude *~
+global-exclude *.pyc
+exclude MANIFEST.in
