@@ -7,6 +7,11 @@ All classes and helpers dealing with styles
 
 from css import SimpleCSSParser, CSSEmptyDocumentError
 
+try:
+    unicode        # Python 2
+except NameError:
+    unicode = str  # Python 3
+
 class StyleError(Exception): pass
 class EmptyStyleError(StyleError): pass
 
