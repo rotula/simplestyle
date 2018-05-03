@@ -5,7 +5,7 @@
 All classes and helpers dealing with styles
 """
 
-from css import SimpleCSSParser, CSSEmptyDocumentError
+from .css import SimpleCSSParser, CSSEmptyDocumentError
 
 class StyleError(Exception): pass
 class EmptyStyleError(StyleError): pass

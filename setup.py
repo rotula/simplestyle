@@ -4,6 +4,7 @@
 Setup for simplestyle
 """
 
+from io import open
 import os.path
 from setuptools import setup
 from setuptools import find_packages
@@ -11,8 +12,8 @@ from setuptools import find_packages
 here = os.path.abspath(os.path.dirname(__file__))
 
 long_description = u""
-with open(os.path.join(here, "README.rst"), "r") as f:
-    long_description = f.read().decode("UTF-8")
+with open(os.path.join(here, "README.rst"), "r", encoding="UTF-8") as f:
+    long_description = f.read()
 
 version = u""
 with open(os.path.join(here, "simplestyle", "__init__.py"), "r") as f:
@@ -40,6 +41,8 @@ setup_args = dict(
             "License :: OSI Approved :: MIT License",
             "Development Status :: 5 - Production/Stable",
             "Programming Language :: Python",
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 3.6",
             "Intended Audience :: Developers",
             "Topic :: Text Processing :: Markup",
         ]
