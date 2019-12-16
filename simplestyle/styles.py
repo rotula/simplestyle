@@ -20,7 +20,7 @@ class Style(object):
     italics = False
     smallcaps = False
 
-    _size_tolerance = 0.10  # size tolerance as factor
+    _size_tolerance = 0.0  # size tolerance as factor
 
     def __init__(self, **kwargs):
         for k, v in kwargs.items():
@@ -38,6 +38,19 @@ class Style(object):
                 self.smallcaps = True if v else False
             else:
                 raise StyleError("Unsupported style: {}".format(k))
+
+    def set_size_tolerance(self, tolerance):
+        """
+        Set a size tolerance for comparing font sizes.
+
+        Args:
+            tolerance (float): Factor to set the tolerance of size
+                equality. A size will compare equal to the size of
+                the current style, if
+                size*(1-tolerance) <= compar_size <= size*(1+tolerance).
+                The default value is 0.0.
+        """
+        self._size_tolerance = tolerance
 
     def __eq__(self, other):
         """Override equals operator"""

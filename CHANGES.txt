@@ -2,6 +2,12 @@
 Changelog for simplestyle
 *************************
 
+1.1.0 (2019-12-16)
+==================
+
+Make _size_tolerance in test for equality of styles
+configurable. Default is now zero tolerance.
+
 1.0.1 (2018-05-03)
 ==================
 
