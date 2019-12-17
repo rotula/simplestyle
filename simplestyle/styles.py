@@ -47,7 +47,7 @@ class Style(object):
             tolerance (float): Factor to set the tolerance of size
                 equality. A size will compare equal to the size of
                 the current style, if
-                size*(1-tolerance) <= compar_size <= size*(1+tolerance).
+                size*(1-tolerance) <= compare_size <= size*(1+tolerance).
                 The default value is 0.0.
         """
         self._size_tolerance = tolerance
