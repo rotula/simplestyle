@@ -5,6 +5,13 @@
 All classes and helpers dealing with styles
 """
 
+import sys
+if sys.version_info.major >= 3:
+    PY3 = True
+    unicode = str
+else:
+    PY3 = False
+
 from .css import SimpleCSSParser, CSSEmptyDocumentError
 
 class StyleError(Exception): pass
