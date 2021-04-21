@@ -61,6 +61,8 @@ class Style(object):
 
     def __eq__(self, other):
         """Override equals operator"""
+        if not isinstance(other, self.__class__):
+            return False
         if self.fontname != other.fontname:
             return False
         # if self.size != other.size:

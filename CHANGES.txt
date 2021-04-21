@@ -2,6 +2,11 @@
 Changelog for simplestyle
 *************************
 
+1.1.2 (2021-04-21)
+==================
+
+BUGFIX: Equality test did not check type.
+
 1.1.1 (2019-12-18)
 ==================
 
