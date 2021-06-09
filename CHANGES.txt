@@ -2,28 +2,34 @@
 Changelog for simplestyle
 *************************
 
+1.2.0 (2021-06-09)
+==================
+
+CHANGED: accept whitespace in property expressions
+
 1.1.2 (2021-04-21)
 ==================
 
-BUGFIX: Equality test did not check type.
+FIXED: Equality test did not check type.
 
 1.1.1 (2019-12-18)
 ==================
 
-Bugfix: Call to unicode in Py 3.
+FIXED: Call to unicode in Py 3.
 
 1.1.0 (2019-12-16)
 ==================
 
-Make _size_tolerance in test for equality of styles
-configurable. Default is now zero tolerance.
+ADDED: Make _size_tolerance in test for equality
+of styles configurable. Default is now zero
+tolerance.
 
 1.0.1 (2018-05-03)
 ==================
 
-No new features, but ported to Python 3.
+CHANGED: No new features, but ported to Python 3.
 
 1.0.0 (2017-04-06)
 ==================
 
-Initial release.
+CHANGED: Initial release.

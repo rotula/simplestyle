@@ -25,7 +25,7 @@ class SimpleCSSParser(object):
 
     css := declaration (";" declaration)* ';'?
     declaration := property ":" expr
-    property := [a-zA-Z-]+
+    property := [a-zA-Z -]+
     expr := (string | [^;"']+)
     string := string1 | string2
     string1 := "'" [^'\n\r\f] "'"
@@ -79,25 +79,37 @@ class SimpleCSSParser(object):
 
     def parse_expr(self):
         ret = ""
+        end_space_count = 0
         try:
             while 1:
                 c = self.get_next()
                 if c == "'":
                     ret += self.parse_string1()
-                    self.skip_whites()
+                    # self.skip_whites()
+                    end_space_count = 0
                 elif c == "\"":
                     ret += self.parse_string2()
+                    end_space_count = 0
                 elif c == ";":
                     self.push_back()
-                    return ret
+                    break
                 elif c.isspace():
-                    return ret
+                    if end_space_count:
+                        continue
+                    else:
+                        ret += " "
+                        end_space_count = 1
+                    # return ret
                 else:
                     ret += c
+                    end_space_count = 0
         except EOF:
             if ret == "":
                 raise CSSUnexpectedEOFError("Unexpected end of file")
-            return ret
+        if end_space_count:
+            if ret[-1].isspace():
+                ret = ret[0:-1]
+        return ret
 
     def parse_string1(self):
         ret = ""
